@@ -13,15 +13,13 @@ namespace CalcCsharp
     public partial class Calculator : Form
     {
         //some Variable
+        DataTable result = new DataTable();
         string checkEnd = null;
-        double number;
-        string opertion;
         public Calculator()
         {
             InitializeComponent();
         }
-
-        private void btnC_Click(object sender, EventArgs e)
+        private void ClearTheText(object sender, EventArgs e)
         {
             //clear the textBox;
             textBox1.Clear();
@@ -32,7 +30,7 @@ namespace CalcCsharp
             Button clickedButton = (Button)sender;
             textBox1.Text += clickedButton.Text;
         }
-        public void displayOperation(object sender, EventArgs e)
+        public void DisplayOperation(object sender, EventArgs e)
         {
             try
             {
@@ -40,51 +38,27 @@ namespace CalcCsharp
                 {
                     checkEnd = textBox1.Text;
                     checkEnd = checkEnd.Substring(textBox1.Text.Length - 1);
-                    Button clickedButton = (Button)sender;
-                    number = double.Parse(textBox1.Text);
-                    opertion = clickedButton.Text;
-                    if (checkEnd != clickedButton.Text)
+                    Button ClickedButton = (Button)sender;
+                   
+                    if (checkEnd != ClickedButton.Text)
                     {
-                        textBox1.Text += clickedButton.Text;
-                        textBox1.Text = "";
-                    }
-                    else if (checkEnd == clickedButton.Text)
+                        textBox1.Text += ClickedButton.Text;
+                    }else
                     {
-                       // textBox1.Text = "not click double opreation";
                         return;
-                    }
-                    else
-                    {
-                        //textBox1.Text = check.Substring(0,check.Length-2) + op;
-                    }
+                }
                       
                 }
             }catch(Exception )
-            {
-                textBox1.Text = "we have exception";
-            }
+               {
+                    textBox1.Text = "we have exception";
         }
-        public void compute(object sender, EventArgs e)
+        }
+    public void Compute(object sender, EventArgs e)
         {
-            DisplayText.Text = number + " " + opertion + " "  +textBox1.Text;
-            switch (opertion)
-            {
-                case "+":
-                    textBox1.Text = (number + double.Parse(textBox1.Text)).ToString();
-                    break;
-                case "-":
-                    textBox1.Text = (number -double.Parse(textBox1.Text)).ToString();
-                    break;
-                case "/":
-                    textBox1.Text = (number / double.Parse(textBox1.Text)).ToString();
-                    break;
-                case "*":
-                    textBox1.Text = (number * double.Parse(textBox1.Text)).ToString();
-                    break;
-                default:
-
-                    break;
-            }
+            var display = result.Compute(textBox1.Text, "");
+            textBox1.Text = display.ToString();
+           
         }
 
         private void Calculator_Load(object sender, EventArgs e)

@@ -65,7 +65,7 @@
             this.btnC.TabIndex = 1;
             this.btnC.Text = "C";
             this.btnC.UseVisualStyleBackColor = false;
-            this.btnC.Click += new System.EventHandler(this.btnC_Click);
+            this.btnC.Click += new System.EventHandler(this.ClearTheText);
             // 
             // btnMinus
             // 
@@ -76,7 +76,7 @@
             this.btnMinus.TabIndex = 2;
             this.btnMinus.Text = "-";
             this.btnMinus.UseVisualStyleBackColor = false;
-            this.btnMinus.Click += new System.EventHandler(this.displayOperation);
+            this.btnMinus.Click += new System.EventHandler(this.DisplayOperation);
             // 
             // btnOne
             // 
@@ -187,7 +187,7 @@
             this.btnPlus.TabIndex = 13;
             this.btnPlus.Text = "+";
             this.btnPlus.UseVisualStyleBackColor = false;
-            this.btnPlus.Click += new System.EventHandler(this.displayOperation);
+            this.btnPlus.Click += new System.EventHandler(this.DisplayOperation);
             // 
             // btnEqual
             // 
@@ -198,7 +198,7 @@
             this.btnEqual.TabIndex = 14;
             this.btnEqual.Text = "=";
             this.btnEqual.UseVisualStyleBackColor = false;
-            this.btnEqual.Click += new System.EventHandler(this.compute);
+            this.btnEqual.Click += new System.EventHandler(this.Compute);
             // 
             // btnDivide
             // 
@@ -209,7 +209,7 @@
             this.btnDivide.TabIndex = 15;
             this.btnDivide.Text = "/";
             this.btnDivide.UseVisualStyleBackColor = false;
-            this.btnDivide.Click += new System.EventHandler(this.displayOperation);
+            this.btnDivide.Click += new System.EventHandler(this.DisplayOperation);
             // 
             // btnMultiply
             // 
@@ -220,7 +220,7 @@
             this.btnMultiply.TabIndex = 16;
             this.btnMultiply.Text = "*";
             this.btnMultiply.UseVisualStyleBackColor = false;
-            this.btnMultiply.Click += new System.EventHandler(this.displayOperation);
+            this.btnMultiply.Click += new System.EventHandler(this.DisplayOperation);
             // 
             // DisplayText
             // 
